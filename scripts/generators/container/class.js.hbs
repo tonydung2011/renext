@@ -1,0 +1,51 @@
+/**
+ *
+ * {{properCase name }} Container
+ *
+ */
+
+import React from 'react';
+import { Text, View, Button } from 'react-native';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+const Style = {
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center' 
+}
+
+/* eslint-disable react/prefer-stateless-function */
+export class {{ properCase name }} extends React.Component {
+  componentWillMount() {
+    this.props.updateTitle('{{ properCase name }}');
+  }
+
+  render() {
+    return (
+      <View style={Style}>
+        <Text>Details Screen</Text>
+        <Button title="Back" onPress={() => this.props.navigation.goBack()} />
+      </View>
+    );
+  }
+}
+
+{{ properCase name }}.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  updateTitle: PropTypes.func,
+};
+
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = () => ({});
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
+
+export default compose(
+  withConnect
+)({{ properCase name }});

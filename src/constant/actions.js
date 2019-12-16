@@ -1,0 +1,1 @@
+export const DEFAULT_ACTION = 'APP/DEFAULT_ACTION';
