@@ -1,4 +1,4 @@
-import {spawn} from 'redux-saga/effects';
+import { spawn } from 'redux-saga/effects';
 
 import homeSaga from './home';
 

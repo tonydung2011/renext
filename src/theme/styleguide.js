@@ -1,4 +1,4 @@
-import {UtilLib} from '@lib';
+import { UtilLib } from '@lib';
 import Sizes from '../sizes';
 
 export default {

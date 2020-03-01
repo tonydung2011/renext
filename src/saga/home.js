@@ -1,6 +1,6 @@
-import {takeEvery, put} from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
 
-import {nullAction} from '@action/ui/home';
+import { nullAction } from '@action/ui/home';
 
 export function* testSaga() {
   console.log('hit');

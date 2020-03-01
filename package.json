@@ -9,10 +9,13 @@
     "test": "jest",
     "generate": "plop --plopfile scripts/generators/index.js",
     "reset-cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src --fix"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.8.1",
+    "@react-native-community/netinfo": "^5.5.1",
     "@react-native-firebase/app": "~6.2.0",
+    "@redux-offline/redux-offline": "^2.5.2-native.3",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-dotenv": "~0.2.0",
@@ -37,6 +40,7 @@
     "metro-react-native-babel-preset": "~0.57.0",
     "node-plop": "~0.23.0",
     "plop": "~2.5.3",
+    "prettier": "^1.19.1",
     "react-test-renderer": "16.9.0",
     "redux-logger": "^3.0.6"
   },

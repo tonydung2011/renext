@@ -5,9 +5,9 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
-import {connect} from 'react-redux';
-import {compose} from 'redux';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 // import AppRoute from '@navigation';
 
@@ -32,9 +32,6 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
 export default compose(withConnect)(Root);
