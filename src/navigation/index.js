@@ -8,11 +8,8 @@
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { useScreens } from 'react-native-screens';
 import HomeScreen from '@container/Home';
 import DetailScreen from '@container/Detail';
-
-useScreens();
 
 const AppNavigator = createStackNavigator(
   {
