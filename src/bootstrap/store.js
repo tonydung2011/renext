@@ -1,16 +1,16 @@
-import { rootReducer } from '@redux/root/reducer';
-import rootSaga from '@redux/root/saga';
-import { applyMiddleware, compose, createStore } from 'redux';
 import dynostore, { dynamicReducers } from '@redux-dynostore/core';
 import { dynamicSagas } from '@redux-dynostore/redux-saga';
+import rootSaga from '@redux/root/saga';
+import { applyMiddleware, compose, createStore } from 'redux';
 import Offline from './offline';
+import Reducer from './reducer';
 import Saga from './saga';
 
 const middleware = applyMiddleware(Saga, Offline.offlineMiddleware);
 const enhancer = [
-  Offline.enhanceStore,
   middleware,
   dynostore(dynamicReducers(), dynamicSagas(Saga)),
+  Offline.enhanceStore,
 ];
 
 if (window.__REDUX_DEVTOOLS_EXTENSION__) {
@@ -18,7 +18,7 @@ if (window.__REDUX_DEVTOOLS_EXTENSION__) {
 }
 
 const store = createStore(
-  Offline.enhanceReducer(rootReducer),
+  Offline.enhanceReducer(Reducer),
   {},
   compose(...enhancer),
 );

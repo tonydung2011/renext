@@ -4,14 +4,9 @@
  *
  */
 
-import { attachReducer, dispatchAction } from '@redux-dynostore/core';
-import dynamic from '@redux-dynostore/react-redux';
-import { runSaga } from '@redux-dynostore/redux-saga';
 import { mockAction, sagaAction } from '@redux/home/action';
-import { homeReducer } from '@redux/home/reducer';
-import homeSaga from '@redux/home/saga';
+import getModule from '@redux/home/module';
 import { selectCount as selectHomeCount } from '@redux/home/selector';
-import { selectCount } from '@redux/root/selector';
 import React, { Component } from 'react';
 import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 import { LoginButton } from 'react-native-fbsdk';
@@ -25,6 +20,8 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
+const homeIdentifier = 'home';
 
 const styles = StyleSheet.create({
   container: {
@@ -64,7 +61,7 @@ class HomeScreen extends Component {
           onPress={() => this.props.navigation.navigate('Details')}
         />
         <Button
-          title="Dispatch simple action"
+          title="Dispatch saga action"
           onPress={() => this.props.sagaAction()}
         />
         <Button
@@ -81,19 +78,16 @@ HomeScreen.propTypes = {};
 HomeScreen.defaultProps = {};
 
 const mapStateToProps = createStructuredSelector({
-  numberRoot: selectCount(),
   numberHome: selectHomeCount(),
 });
+
 const mapDispatchToProps = dispatch => ({
-  mockAction: () => dispatch(mockAction()),
   sagaAction: () => dispatch(sagaAction()),
+  mockAction: () => dispatch(mockAction()),
 });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
-const dynamicComponent = dynamic(
-  'home',
-  attachReducer(homeReducer),
-  runSaga(homeSaga),
-  dispatchAction(mockAction()),
-);
 
-export default compose(dynamicComponent, withConnect)(HomeScreen);
+export default compose(
+  getModule({ identifier: homeIdentifier }),
+  withConnect,
+)(HomeScreen);

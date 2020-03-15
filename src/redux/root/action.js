@@ -3,7 +3,7 @@ import {
   REDUX_ROOT_SAGA_ACTION,
 } from '@redux/root/constants';
 
-export const mockAction = () => ({
+export const rootAction = () => ({
   type: REDUX_ROOT_DUMP_ACTION,
 });
 
