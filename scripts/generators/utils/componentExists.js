@@ -10,7 +10,7 @@ const pageComponents = fs.readdirSync(
   path.join(__dirname, '../../../src/component'),
 );
 const pageContainers = fs.readdirSync(
-  path.join(__dirname, '../../../src/container'),
+  path.join(__dirname, '../../../src/screen'),
 );
 const components = pageComponents.concat(pageContainers);
 

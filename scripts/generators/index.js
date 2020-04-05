@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const {exec} = require('child_process');
+const { exec } = require('child_process');
 const componentGenerator = require('./component/index.js');
 const containerGenerator = require('./container/index.js');
 // const languageGenerator = require('./language/index.js');
@@ -19,10 +19,7 @@ module.exports = plop => {
   // plop.setGenerator('unit test', unitTestGenerator);
   plop.addHelper('directory', comp => {
     try {
-      fs.accessSync(
-        path.join(__dirname, `../../src/containers/${comp}`),
-        fs.F_OK,
-      );
+      fs.accessSync(path.join(__dirname, `../../src/screen/${comp}`), fs.F_OK);
       return `containers/${comp}`;
     } catch (e) {
       return `components/${comp}`;

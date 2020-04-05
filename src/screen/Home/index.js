@@ -61,6 +61,10 @@ class HomeScreen extends Component {
           onPress={() => this.props.navigation.navigate('Details')}
         />
         <Button
+          title="Go to List"
+          onPress={() => this.props.navigation.navigate('ListItem')}
+        />
+        <Button
           title="Dispatch saga action"
           onPress={() => this.props.sagaAction()}
         />

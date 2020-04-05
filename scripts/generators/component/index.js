@@ -34,7 +34,7 @@ module.exports = {
     const actions = [
       {
         type: 'add',
-        path: '../../src/component/{{properCase name}}.js',
+        path: '../../src/component/{{properCase name}}/index.js',
         templateFile: componentTemplate,
         abortOnFail: true,
       },

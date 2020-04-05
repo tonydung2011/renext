@@ -1,5 +1,5 @@
-import { UtilLib } from '@lib';
-import Sizes from '../sizes';
+import color from '@theme/color';
+import size from './size';
 
 export default {
   flex0: {
@@ -46,21 +46,21 @@ export default {
   },
   container: {},
   fullScreen: {
-    height: Sizes.screen.height,
-    width: Sizes.screen.width,
+    height: size.screen.height,
+    width: size.screen.width,
   },
   fullWith: {
-    width: Sizes.screen.width,
+    width: size.screen.width,
   },
   fullHeight: {
-    height: Sizes.screen.height,
+    height: size.screen.height,
   },
   hiddenScreen: {
     height: 0,
     width: 0,
   },
   rowHeight: {
-    height: Sizes.screen.height / 12,
+    height: size.screen.height / 12,
   },
   undefinedScreen: {
     width: undefined,
@@ -101,8 +101,8 @@ export default {
     justifyContent: 'space-between',
   },
   loadingWrap: {
-    width: Sizes.screen.width,
-    height: Sizes.screen.height,
+    width: size.screen.width,
+    height: size.screen.height,
     position: 'absolute',
     zIndex: 999,
     flex: 1,
@@ -235,14 +235,14 @@ export default {
   noBackground: {
     backgroundColor: 'rgba(0, 0, 0, 0)',
   },
-  headerPadding: {
-    paddingHorizontal: 10,
-    paddingTop: (UtilLib.isDeviceInShouldHaveTopMargin() ? 10 : 0) + 30,
-  },
   selfAlignContent: {
     alignSelf: 'stretch',
   },
   rounding: {
     borderRadius: 50,
+  },
+  bottomBorder: {
+    borderBottomWidth: 2,
+    borderColor: color.border.dark,
   },
 };

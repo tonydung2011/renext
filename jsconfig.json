@@ -3,7 +3,7 @@
       "baseUrl": "./src",
       "target": "es2018",
       "paths": {
-        "@container/*": ["./container/*"],
+        "@screen/*": ["./screen/*"],
         "@component/*": ["./component/*"],
         "@lib/*": ["./lib/*"],
         "@navigation/*": ["./navigation/*"],
