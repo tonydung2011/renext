@@ -6,12 +6,16 @@
 
 import React from 'react';
 import { View } from 'react-native';
-
-// import AppRoute from '@navigation';
+import SafeAreaView from 'react-native-safe-area-view';
+import { AppStyle } from '@theme/index';
 
 class Root extends React.Component {
   render() {
-    return <View style={{ flex: 1 }}>{this.props.children}</View>;
+    return (
+      <SafeAreaView style={[AppStyle.styleguide.flex1]}>
+        <View style={[AppStyle.styleguide.flex1]}>{this.props.children}</View>
+      </SafeAreaView>
+    );
   }
 }
 

@@ -7,8 +7,8 @@
  */
 
 import AnimatedDetail from '@screen/AnimatedDetail/index';
-import DetailScreen from '@screen/Detail';
-import HomeScreen from '@screen/Home';
+import DetailScreen from '@screen/Detail/index';
+import HomeScreen from '@screen/Home/index';
 import ListItem from '@screen/ListItem/index';
 import { createAppContainer } from 'react-navigation';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
@@ -17,15 +17,22 @@ import { TransitionLib } from '@lib/index';
 const AppNavigator = createSharedElementStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailScreen,
+    Details: {
+      screen: DetailScreen,
+      navigationOptions: {
+        cardStyleInterpolator: TransitionLib.screenMoveFromRight,
+      },
+    },
     ListItem: ListItem,
     AnimatedDetail: AnimatedDetail,
   },
   {
     initialRouteName: 'Home',
-    headerMode: 'none',
-    mode: 'modal',
-    // transitionConfig: () => TransitionLib.springyFadeIn(),
+    // headerMode: 'none',
+    defaultNavigationOptions: {
+      cardStyleInterpolator: TransitionLib.screenFadeIn,
+      gestureEnabled: false,
+    },
   },
 );
 

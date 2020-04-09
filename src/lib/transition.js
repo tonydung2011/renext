@@ -1,5 +1,6 @@
 // @flow
 import { Easing, Animated } from 'react-native';
+import { AppSize } from '@theme/index';
 
 function fadeIn(duration = 400, spring = false) {
   const transitionSpec = spring
@@ -52,7 +53,37 @@ export function springyFadeIn() {
   };
 }
 
+const screenFadeIn = ({ current: { progress } }) => {
+  const opacity = progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 1],
+  });
+  return {
+    cardStyle: {
+      opacity,
+    },
+  };
+};
+
+const screenMoveFromRight = ({ current: { progress } }) => {
+  const marginLeft = progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [AppSize.screen.width, 0],
+  });
+  return {
+    cardStyle: {
+      transform: [
+        {
+          translateX: marginLeft,
+        },
+      ],
+    },
+  };
+};
+
 export default {
   fadeIn,
   springyFadeIn,
+  screenFadeIn,
+  screenMoveFromRight,
 };
