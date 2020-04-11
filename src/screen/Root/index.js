@@ -12,7 +12,14 @@ import { AppStyle } from '@theme/index';
 class Root extends React.Component {
   render() {
     return (
-      <SafeAreaView style={[AppStyle.styleguide.flex1]}>
+      <SafeAreaView
+        forceInset={{
+          bottom: 'never',
+        }}
+        style={[
+          AppStyle.styleguide.flex1,
+          AppStyle.styleguide.primaryBackgroundRegular,
+        ]}>
         <View style={[AppStyle.styleguide.flex1]}>{this.props.children}</View>
       </SafeAreaView>
     );

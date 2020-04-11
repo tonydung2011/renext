@@ -16,19 +16,19 @@ import { TransitionLib } from '@lib/index';
 
 const AppNavigator = createSharedElementStackNavigator(
   {
-    Home: HomeScreen,
-    Details: {
-      screen: DetailScreen,
-      navigationOptions: {
-        cardStyleInterpolator: TransitionLib.screenMoveFromRight,
-      },
-    },
-    ListItem: ListItem,
+    // Home: HomeScreen,
+    // Details: {
+    //   screen: DetailScreen,
+    //   navigationOptions: {
+    //     cardStyleInterpolator: TransitionLib.screenMoveFromRight,
+    //   },
+    // },
+    Home: ListItem,
     AnimatedDetail: AnimatedDetail,
   },
   {
     initialRouteName: 'Home',
-    // headerMode: 'none',
+    headerMode: 'none',
     defaultNavigationOptions: {
       cardStyleInterpolator: TransitionLib.screenFadeIn,
       gestureEnabled: false,

@@ -1,7 +1,7 @@
 import store from '@bootstrap/store';
 import { NavigationServiceLib } from '@lib/index';
 import AppRoute from '@navigation/index';
-import Root from '@screen/Root';
+import Root from '@screen/Root/index';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';

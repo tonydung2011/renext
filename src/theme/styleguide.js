@@ -245,4 +245,46 @@ export default {
     borderBottomWidth: 2,
     borderColor: color.border.dark,
   },
+  primaryBackgroundStrong: {
+    backgroundColor: color.primary.strong,
+  },
+  primaryBackgroundRegular: {
+    backgroundColor: color.primary.regular,
+  },
+  primaryBackgroundLight: {
+    backgroundColor: color.primary.light,
+  },
+  secondaryBackgroundStrong: {
+    backgroundColor: color.secondary.strong,
+  },
+  secondaryBackgroundRegular: {
+    backgroundColor: color.secondary.regular,
+  },
+  secondaryBackgroundLight: {
+    backgroundColor: color.secondary.light,
+  },
+  teritaryBackgroundStrong: {
+    backgroundColor: color.teritary.strong,
+  },
+  teritaryBackgroundRegular: {
+    backgroundColor: color.teritary.regular,
+  },
+  teritaryBackgroundLight: {
+    backgroundColor: color.teritary.light,
+  },
+  inactiveBackground: {
+    backgroundColor: color.inactive,
+  },
+  shadowBackground: {
+    backgroundColor: color.shadow,
+  },
+  darkBackground: {
+    backgroundColor: color.dark,
+  },
+  whiteBackground: {
+    backgroundColor: color.white,
+  },
+  transparentBackground: {
+    backgroundColor: color.transparent,
+  },
 };

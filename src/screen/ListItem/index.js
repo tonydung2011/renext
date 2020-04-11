@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import data from './data';
+import HeaderNav from '@component/HeaderNav/index';
 
 const homeIdentifier = 'home';
 
@@ -51,6 +52,7 @@ class ListItem extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <HeaderNav title="Home" />
         <LargeList
           style={styles.container}
           data={[{ items: data }]}

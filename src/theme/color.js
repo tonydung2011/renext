@@ -1,18 +1,18 @@
 export default {
   primary: {
-    strong: '',
-    regular: '',
-    light: '',
+    strong: '#A62F00',
+    regular: '#FF4900',
+    light: '#FF7640',
   },
   secondary: {
-    strong: '',
-    regular: '',
-    light: '',
+    strong: '#20805E',
+    regular: '#00AB6F',
+    light: '#35D59D',
   },
   teritary: {
-    strong: '',
-    regular: '',
-    light: '',
+    strong: '#73AE2C',
+    regular: '#80E800',
+    light: '#A1F43D',
   },
   inactive: '#ccc',
   shadow: '#aaa',
