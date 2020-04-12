@@ -287,4 +287,34 @@ export default {
   transparentBackground: {
     backgroundColor: color.transparent,
   },
+  lowShadow: {
+    shadowOpacity: 1,
+    shadowRadius: 3,
+    shadowOffset: { height: 1, width: 1 },
+    elevation: 2,
+    shadowColor: color.shadow,
+    overflow: 'visible',
+  },
+  mediumShadow: {
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    shadowOffset: { height: 6, width: 6 },
+    elevation: 6,
+    shadowColor: color.shadow,
+    overflow: 'visible',
+  },
+  highShadow: {
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    shadowOffset: { height: 12, width: 12 },
+    elevation: 12,
+    shadowColor: color.shadow,
+    overflow: 'visible',
+  },
+  iconButtonHitSlop: {
+    top: 10,
+    bottom: 10,
+    left: 10,
+    right: 10,
+  },
 };

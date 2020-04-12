@@ -2,7 +2,7 @@
  * Container Generator
  */
 
-const componentExists = require('../utils/componentExists');
+const reduxExists = require('../utils/reduxExists.js');
 
 module.exports = {
   description: 'Add a container component',
@@ -11,11 +11,11 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'What should it be called?',
-      default: 'Form',
+      default: 'LargeList',
       validate: value => {
         if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component or container with this name already exists'
+          return reduxExists(value)
+            ? 'A Redux logic with this name already exists'
             : true;
         }
 
@@ -24,41 +24,48 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.js and index.test.js
-    var componentTemplate = './container/class.js.hbs'; // eslint-disable-line no-var
-
     const actions = [
       {
         type: 'add',
-        path: '../../src/container/{{properCase name}}.js',
-        templateFile: componentTemplate,
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '../../src/action/ui/{{properCase name}}.js',
+        path: '../../src/redux/{{properCase name}}/action.js',
         templateFile: './container/actions.js.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../src/reducer/ui/{{properCase name}}.js',
+        path: '../../src/redux/{{properCase name}}/reducer.js',
         templateFile: './container/reducer.js.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../src/redux/{{properCase name}}/constants.js',
+        templateFile: './container/constants.js.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../src/redux/{{properCase name}}/module.js',
+        templateFile: './container/module.js.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../src/redux/{{properCase name}}/selector.js',
+        templateFile: './container/selector.js.hbs',
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../src/redux/{{properCase name}}/saga.js',
+        templateFile: './container/saga.js.hbs',
         abortOnFail: true,
       },
     ];
 
     actions.push({
       type: 'prettify',
-      path: '/container/',
-    });
-    actions.push({
-      type: 'prettify',
-      path: '/action/',
-    });
-    actions.push({
-      type: 'prettify',
-      path: '/reducer/',
+      path: '/redux/',
     });
 
     return actions;

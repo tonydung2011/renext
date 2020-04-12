@@ -19,6 +19,7 @@ export default {
   dark: '#000',
   white: '#FFF',
   transparent: 'rgba(0,0,0,0)',
+  dim: 'rgba(0,0,0,0.3)',
   border: {
     dark: '#bbb',
   },

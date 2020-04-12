@@ -5,14 +5,14 @@
  */
 
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { AppStyle } from '@theme/index';
 import { SharedElement } from 'react-navigation-shared-element';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { NavigationServiceLib, UtilLib } from '@lib/index';
 import { AppConstants } from '@constant/index';
+import style from './style';
 
-function AnimatedItem({ style, row, isLast }) {
+function AnimatedItem({ row }) {
   return (
     <TouchableOpacity
       onPress={() =>
@@ -20,41 +20,44 @@ function AnimatedItem({ style, row, isLast }) {
       }>
       <View
         style={[
-          style,
+          style.container,
           AppStyle.styleguide.columnFlex,
           AppStyle.styleguide.pad10,
-          !isLast && AppStyle.styleguide.bottomBorder,
+          AppStyle.styleguide.lowShadow,
         ]}>
         <View
           style={[
+            AppStyle.styleguide.whiteBackground,
             AppStyle.styleguide.flex1,
-            AppStyle.styleguide.justifyContent,
+            AppStyle.styleguide.middleContent,
           ]}>
           <SharedElement
             id={UtilLib.getAnimatedId(
               AppConstants.sharedElementPrefixId.animatedItem,
               row.id,
             )}>
-            <Text numberOfLines={1} ellipsizeMode="tail">
-              {row.name}
-            </Text>
+            <Image
+              source={row.image}
+              style={[AppStyle.styleguide.flex1]}
+              {...style.image}
+              resizeMode="cover"
+            />
           </SharedElement>
         </View>
         <View
           style={[
             AppStyle.styleguide.flex1,
-            AppStyle.styleguide.justifyContent,
+            AppStyle.styleguide.pad10,
+            AppStyle.styleguide.whiteBackground,
           ]}>
-          <Text numberOfLines={1} ellipsizeMode="tail">
-            {row.description}
+          <Text numberOfLines={1} ellipsizeMode="tail" style={style.title}>
+            {row.title}
           </Text>
-        </View>
-        <View
-          style={[
-            AppStyle.styleguide.flex1,
-            AppStyle.styleguide.justifyContent,
-          ]}>
-          <Text>{row.datetime.format('DD MM YYYY')}</Text>
+          <View style={[AppStyle.styleguide.padTop5]}>
+            <Text style={style.datetime}>
+              {row.datetime.format('MMMM DD, YYYY')}
+            </Text>
+          </View>
         </View>
       </View>
     </TouchableOpacity>

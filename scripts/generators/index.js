@@ -8,19 +8,21 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 const componentGenerator = require('./component/index.js');
-const containerGenerator = require('./container/index.js');
+const screenGenerator = require('./screen/index.js');
+const reduxGenerator = require('./container/index.js');
 // const languageGenerator = require('./language/index.js');
 // const unitTestGenerator = require('./unit-tests/index.js');
 
 module.exports = plop => {
   plop.setGenerator('component', componentGenerator);
-  plop.setGenerator('container', containerGenerator);
+  plop.setGenerator('redux', reduxGenerator);
+  plop.setGenerator('screen', screenGenerator);
   // plop.setGenerator('language', languageGenerator);
   // plop.setGenerator('unit test', unitTestGenerator);
   plop.addHelper('directory', comp => {
     try {
       fs.accessSync(path.join(__dirname, `../../src/screen/${comp}`), fs.F_OK);
-      return `containers/${comp}`;
+      return `screens/${comp}`;
     } catch (e) {
       return `components/${comp}`;
     }

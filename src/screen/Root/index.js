@@ -18,7 +18,7 @@ class Root extends React.Component {
         }}
         style={[
           AppStyle.styleguide.flex1,
-          AppStyle.styleguide.primaryBackgroundRegular,
+          AppStyle.styleguide.whiteBackground,
         ]}>
         <View style={[AppStyle.styleguide.flex1]}>{this.props.children}</View>
       </SafeAreaView>

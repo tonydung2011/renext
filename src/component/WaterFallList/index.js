@@ -7,7 +7,7 @@
 import { AppStyle } from '@theme/index';
 import React from 'react';
 import { View } from 'react-native';
-import { WaterfallList } from 'react-native-largelist-v3';
+import { WaterfallList as RNWaterfallList } from 'react-native-largelist-v3';
 import { NormalFooter } from 'react-native-spring-scrollview/NormalFooter';
 import { NormalHeader } from 'react-native-spring-scrollview/NormalHeader';
 // import PropTypes from 'prop-types';
@@ -20,12 +20,13 @@ function WaterFallList({
   onRefresh,
   isAllLoaded,
   onLoadMore,
+  ref,
 }) {
   return (
-    <View>
-      <WaterfallList
-        ref={ref => (this.largeList = ref)}
-        style={AppStyle.styleGuide.container}
+    <View style={[AppStyle.styleguide.flex1]}>
+      <RNWaterfallList
+        ref={ref}
+        style={AppStyle.styleguide.flex1}
         data={data}
         heightForItem={() => itemHeight}
         preferColumnWidth={itemWidth}
@@ -43,4 +44,6 @@ function WaterFallList({
 
 WaterFallList.propTypes = {};
 
-export default WaterFallList;
+export default React.forwardRef((props, ref) =>
+  WaterFallList({ ...props, ref }),
+);

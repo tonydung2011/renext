@@ -6,25 +6,27 @@
  * @flow
  */
 
+import { TransitionLib } from '@lib/index';
 import AnimatedDetail from '@screen/AnimatedDetail/index';
-import DetailScreen from '@screen/Detail/index';
-import HomeScreen from '@screen/Home/index';
 import ListItem from '@screen/ListItem/index';
 import { createAppContainer } from 'react-navigation';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
-import { TransitionLib } from '@lib/index';
+import { AppColor } from '@theme/index';
 
 const AppNavigator = createSharedElementStackNavigator(
   {
-    // Home: HomeScreen,
-    // Details: {
-    //   screen: DetailScreen,
-    //   navigationOptions: {
-    //     cardStyleInterpolator: TransitionLib.screenMoveFromRight,
-    //   },
-    // },
     Home: ListItem,
-    AnimatedDetail: AnimatedDetail,
+    AnimatedDetail: {
+      screen: AnimatedDetail,
+      navigationOptions: {
+        containerStyle: {
+          backgroundColor: AppColor.shadow,
+        },
+        cardStyle: {
+          backgroundColor: AppColor.dim,
+        },
+      },
+    },
   },
   {
     initialRouteName: 'Home',

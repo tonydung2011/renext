@@ -81,9 +81,31 @@ const screenMoveFromRight = ({ current: { progress } }) => {
   };
 };
 
+const screenFadeInAndZoom = ({ current: { progress } }) => {
+  const scale = progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.7, 1],
+  });
+  const opacity = progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 1],
+  });
+  return {
+    cardStyle: {
+      transform: [
+        {
+          scaleY: scale,
+        },
+      ],
+      opacity,
+    },
+  };
+};
+
 export default {
   fadeIn,
   springyFadeIn,
   screenFadeIn,
   screenMoveFromRight,
+  screenFadeInAndZoom,
 };
