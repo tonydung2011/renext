@@ -13,11 +13,13 @@ import { selectCount as selectHomeCount } from '@redux/home/selector';
 import { AppSize, AppStyle } from '@theme/index';
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import data from './data';
 import style from './style';
+import { withMenu } from '@context/index';
 
 const homeIdentifier = 'home';
 
@@ -32,25 +34,35 @@ class ListItem extends Component {
 
   render() {
     return (
-      <View style={[AppStyle.styleguide.flex1]}>
-        <HeaderNav
-          title="Home"
-          isWhite
-          useSearch
-          searchText={this.state.search}
-          onChangeSearch={text => {
-            this.setState({ search: text });
-          }}
-        />
-        <View style={[AppStyle.styleguide.padx15, style.waterfallList]}>
-          <WaterFallList
-            data={data}
-            itemHeight={250}
-            itemWidth={(AppSize.screen.width - 30) / 2}
-            renderItem={this._renderIndexPath}
+      <SafeAreaView
+        forceInset={{
+          bottom: 'never',
+        }}
+        style={[
+          AppStyle.styleguide.flex1,
+          AppStyle.styleguide.whiteBackground,
+        ]}>
+        <View style={[AppStyle.styleguide.flex1]}>
+          <HeaderNav
+            title="Home"
+            isWhite
+            useSearch
+            searchText={this.state.search}
+            onChangeSearch={text => {
+              this.setState({ search: text });
+            }}
+            onPress={this.props.menu.openMenu}
           />
+          <View style={[AppStyle.styleguide.padx15, style.waterfallList]}>
+            <WaterFallList
+              data={data}
+              itemHeight={250}
+              itemWidth={(AppSize.screen.width - 30) / 2}
+              renderItem={this._renderIndexPath}
+            />
+          </View>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }
@@ -72,4 +84,5 @@ const withConnect = connect(mapStateToProps, mapDispatchToProps);
 export default compose(
   getModule({ identifier: homeIdentifier }),
   withConnect,
+  withMenu,
 )(ListItem);

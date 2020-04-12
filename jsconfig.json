@@ -15,7 +15,7 @@
         "@lang/*": ["./lang/*"],
         "@reducer/*": ["./reducer/*"],
         "@bootstrap/*": ["./bootstrap/*"],
-        "@provider/*": ["./provider/*"],
+        "@context/*": ["./context/*"],
       }
     },
     "exclude": [
