@@ -291,9 +291,10 @@ export default {
     shadowOpacity: 1,
     shadowRadius: 3,
     shadowOffset: { height: 1, width: 1 },
-    elevation: 2,
+    elevation: 3,
     shadowColor: color.shadow,
     overflow: 'visible',
+    borderColor: 'transparent',
   },
   mediumShadow: {
     shadowOpacity: 1,
@@ -302,6 +303,7 @@ export default {
     elevation: 6,
     shadowColor: color.shadow,
     overflow: 'visible',
+    borderColor: 'transparent',
   },
   highShadow: {
     shadowOpacity: 1,
@@ -310,6 +312,7 @@ export default {
     elevation: 12,
     shadowColor: color.shadow,
     overflow: 'visible',
+    borderColor: 'transparent',
   },
   iconButtonHitSlop: {
     top: 10,

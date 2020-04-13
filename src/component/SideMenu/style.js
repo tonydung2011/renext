@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
 import { AppSize } from '@theme/index';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {

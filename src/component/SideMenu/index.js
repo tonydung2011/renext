@@ -12,7 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Animated from 'react-native-reanimated';
 import style from './style';
 
-const { interpolate, Extrapolate } = Animated;
+const { interpolate, Extrapolate, useCode, block, call } = Animated;
 
 function SideMenu({ children }) {
   const menu = useMenu();
@@ -28,7 +28,7 @@ function SideMenu({ children }) {
   });
   const overlayScale = interpolate(menu.toggleProgress, {
     inputRange: [0, 1],
-    outputRange: [0.000000001, 1],
+    outputRange: [Math.PI / 2, 0],
     extrapolate: Extrapolate.CLAMP,
   });
 
@@ -38,7 +38,7 @@ function SideMenu({ children }) {
         <View style={[style.container]}>
           <LinearGradient
             style={[AppStyle.styleguide.flex1]}
-            colors={[AppColor.primary.regular, AppColor.primary.light]}
+            colors={[AppColor.secondary.regular, AppColor.secondary.light]}
             start={{ x: 0, y: 0.5 }}
             end={{ x: 1, y: 0.5 }}
           />
@@ -51,10 +51,9 @@ function SideMenu({ children }) {
             },
           ]}>
           {children}
-          <TouchableWithoutFeedback
-            onPress={menu.closeMenu}
-            style={[AppStyle.styleguide.flex1]}>
+          <TouchableWithoutFeedback onPress={menu.closeMenu}>
             <Animated.View
+              blurRadius={10}
               style={[
                 AppStyle.styleguide.absoluteView,
                 AppStyle.styleguide.fullScreen,
@@ -62,7 +61,7 @@ function SideMenu({ children }) {
                 {
                   transform: [
                     {
-                      scale: overlayScale,
+                      rotateX: overlayScale,
                     },
                   ],
                 },
