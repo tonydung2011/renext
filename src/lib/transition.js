@@ -1,6 +1,7 @@
 // @flow
-import { Easing, Animated } from 'react-native';
-import { AppSize } from '@theme/index';
+import Animated from 'react-native-reanimated';
+
+const { Easing } = Animated;
 
 function fadeIn(duration = 400, spring = false) {
   const transitionSpec = spring
@@ -13,30 +14,7 @@ function fadeIn(duration = 400, spring = false) {
         duration,
         easing: Easing.bezier(0.2833, 0.99, 0.31833, 0.99),
         timing: Animated.timing,
-        useNativeDriver: true,
       };
-
-  return {
-    transitionSpec,
-    screenInterpolator: ({ position, scene }) => {
-      const { index } = scene;
-
-      const opacity = position.interpolate({
-        inputRange: [index - 1, index],
-        outputRange: [0, 1],
-      });
-
-      return { opacity };
-    },
-  };
-}
-
-export function springyFadeIn() {
-  const transitionSpec = {
-    timing: Animated.spring,
-    tension: 10,
-    useNativeDriver: true,
-  };
 
   return {
     transitionSpec,
@@ -65,47 +43,7 @@ const screenFadeIn = ({ current: { progress } }) => {
   };
 };
 
-const screenMoveFromRight = ({ current: { progress } }) => {
-  const marginLeft = progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [AppSize.screen.width, 0],
-  });
-  return {
-    cardStyle: {
-      transform: [
-        {
-          translateX: marginLeft,
-        },
-      ],
-    },
-  };
-};
-
-const screenFadeInAndZoom = ({ current: { progress } }) => {
-  const scale = progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0.7, 1],
-  });
-  const opacity = progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  });
-  return {
-    cardStyle: {
-      transform: [
-        {
-          scaleY: scale,
-        },
-      ],
-      opacity,
-    },
-  };
-};
-
 export default {
   fadeIn,
-  springyFadeIn,
   screenFadeIn,
-  screenMoveFromRight,
-  screenFadeInAndZoom,
 };

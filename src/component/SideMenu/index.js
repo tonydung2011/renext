@@ -12,7 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Animated from 'react-native-reanimated';
 import style from './style';
 
-const { interpolate, Extrapolate, useCode, block, call } = Animated;
+const { interpolate, Extrapolate } = Animated;
 
 function SideMenu({ children }) {
   const menu = useMenu();

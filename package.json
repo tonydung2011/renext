@@ -41,6 +41,7 @@
     "react-native-uuid": "^1.4.9",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.3.7",
+    "react-navigation-drawer": "^2.4.11",
     "react-navigation-shared-element": "^2.2.0",
     "react-navigation-stack": "^2.3.11",
     "react-redux": "~7.1.3",
