@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.1",
-    "@react-native-community/masked-view": "^0.1.7",
+    "@react-native-community/masked-view": "^0.1.9",
     "@react-native-community/netinfo": "^5.5.1",
     "@react-native-firebase/app": "~6.2.0",
     "@redux-dynostore/core": "^3.0.1",
@@ -38,6 +38,7 @@
     "react-native-screens": "^2.0.1",
     "react-native-shared-element": "^0.6.1",
     "react-native-spring-scrollview": "^2.0.23",
+    "react-native-svg": "^12.1.0",
     "react-native-uuid": "^1.4.9",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.3.7",
