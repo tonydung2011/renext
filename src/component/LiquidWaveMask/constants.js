@@ -16,3 +16,5 @@ export const defaultSpringConfig = SpringUtils.makeDefaultConfig();
 export const minHorizontalRadius = 30;
 export const maxHorizontalRadius = 70;
 export const curveVeritcalHorizontalRate = Math.E;
+export const springVelocity = 50;
+export const initialWaveCenterY = AppSize.screen.height * 0.7;
