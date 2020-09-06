@@ -1,5 +1,5 @@
-import { APP_NAME_REGISTRY } from 'react-native-dotenv';
+import AppEnv from '../../app.json';
 
 export default {
-  appNameRegistry: APP_NAME_REGISTRY,
+  appNameRegistry: AppEnv.name,
 };
