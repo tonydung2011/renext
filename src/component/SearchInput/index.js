@@ -4,7 +4,7 @@
  *
  */
 
-import { HookLib } from '@lib/index';
+import { useColorTransition } from '@hook';
 import { AppColor } from '@theme/index';
 import React from 'react';
 import { TextInput } from 'react-native-gesture-handler';
@@ -18,7 +18,7 @@ function SearchInput({
   onSubmitEditing,
   onBlur,
 }) {
-  const [borderColor, animateToBorderColor] = HookLib.useColorTransition([
+  const [borderColor, animateToBorderColor] = useColorTransition([
     AppColor.inactive,
     AppColor.dark,
   ]);

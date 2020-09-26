@@ -5,11 +5,9 @@
  */
 
 import { mockAction, sagaAction } from '@redux/home/action';
-import getModule from '@redux/home/module';
 import { selectCount as selectHomeCount } from '@redux/home/selector';
 import React, { Component } from 'react';
 import { Button, Platform, StyleSheet, Text, View } from 'react-native';
-import { LoginButton } from 'react-native-fbsdk';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
@@ -50,12 +48,6 @@ class HomeScreen extends Component {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text style={styles.instructions}>{this.props.numberHome}</Text>
-        <LoginButton
-          onLoginFinished={(err, status) => {
-            console.log('err', err);
-            console.log('status', status);
-          }}
-        />
         <Button
           title="Go to Details"
           onPress={() => this.props.navigation.navigate('Details')}
@@ -91,7 +83,4 @@ const mapDispatchToProps = dispatch => ({
 });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(
-  getModule({ identifier: homeIdentifier }),
-  withConnect,
-)(HomeScreen);
+export default compose(withConnect)(HomeScreen);

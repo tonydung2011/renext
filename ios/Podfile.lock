@@ -13,20 +13,6 @@ PODS:
     - React-Core (= 0.63.2)
     - React-jsi (= 0.63.2)
     - ReactCommon/turbomodule/core (= 0.63.2)
-  - FBSDKCoreKit (5.8.0):
-    - FBSDKCoreKit/Basics (= 5.8.0)
-    - FBSDKCoreKit/Core (= 5.8.0)
-  - FBSDKCoreKit/Basics (5.8.0)
-  - FBSDKCoreKit/Core (5.8.0):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.8.0):
-    - FBSDKLoginKit/Login (= 5.8.0)
-  - FBSDKLoginKit/Login (5.8.0):
-    - FBSDKCoreKit (~> 5.0)
-  - FBSDKShareKit (5.8.0):
-    - FBSDKShareKit/Share (= 5.8.0)
-  - FBSDKShareKit/Share (5.8.0):
-    - FBSDKCoreKit (~> 5.0)
   - Firebase/Core (6.13.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.6)
@@ -317,21 +303,7 @@ PODS:
     - React-cxxreact (= 0.63.2)
     - React-jsi (= 0.63.2)
   - React-jsinspector (0.63.2)
-  - react-native-fbsdk (1.1.1):
-    - React
-    - react-native-fbsdk/Core (= 1.1.1)
-    - react-native-fbsdk/Login (= 1.1.1)
-    - react-native-fbsdk/Share (= 1.1.1)
-  - react-native-fbsdk/Core (1.1.1):
-    - FBSDKCoreKit (= 5.8)
-    - React
-  - react-native-fbsdk/Login (1.1.1):
-    - FBSDKLoginKit (= 5.8)
-    - React
-  - react-native-fbsdk/Share (1.1.1):
-    - FBSDKShareKit (= 5.8)
-    - React
-  - react-native-netinfo (5.5.1):
+  - react-native-netinfo (5.9.6):
     - React
   - react-native-safe-area-context (0.7.3):
     - React
@@ -395,18 +367,18 @@ PODS:
     - React-Core (= 0.63.2)
     - React-cxxreact (= 0.63.2)
     - React-jsi (= 0.63.2)
-  - RNCAsyncStorage (1.8.1):
+  - RNCAsyncStorage (1.12.0):
     - React
-  - RNCMaskedView (0.1.9):
+  - RNCMaskedView (0.1.10):
     - React
   - RNFBApp (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - React
-  - RNGestureHandler (1.5.6):
+  - RNGestureHandler (1.8.0):
     - React
-  - RNReanimated (1.4.0):
+  - RNReanimated (1.13.1):
     - React
-  - RNScreens (2.0.1):
+  - RNScreens (2.11.0):
     - React
   - RNSharedElement (0.6.1):
     - React
@@ -414,7 +386,9 @@ PODS:
     - React
   - RNSVG (12.1.0):
     - React
-  - RNVectorIcons (6.6.0):
+  - RNVectorIcons (6.7.0):
+    - React
+  - toolbar-android (0.1.0-rc.2):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -458,7 +432,6 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -481,6 +454,7 @@ DEPENDENCIES:
   - RNSpringScrollView (from `../node_modules/react-native-spring-scrollview/ios`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "toolbar-android (from `../node_modules/@react-native-community/toolbar-android`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -488,9 +462,6 @@ SPEC REPOS:
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -546,8 +517,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-fbsdk:
-    :path: "../node_modules/react-native-fbsdk"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
@@ -592,6 +561,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  toolbar-android:
+    :path: "../node_modules/@react-native-community/toolbar-android"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -603,9 +574,6 @@ SPEC CHECKSUMS:
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   FBLazyVector: 3ef4a7f62e7db01092f9d517d2ebc0d0677c4a37
   FBReactNativeSpec: dc7fa9088f0f2a998503a352b0554d69a4391c5a
-  FBSDKCoreKit: e7dcac0aabcfb09d0166998edd95fe3b05a0ce5d
-  FBSDKLoginKit: 1b0cf04df0370b37404213157b060d6666ede814
-  FBSDKShareKit: abc29e1bb4f9f59f679adf1ae191006d68455f96
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
   FirebaseCore: 307ea2508df730c5865334e41965bd9ea344b0e5
@@ -638,8 +606,7 @@ SPEC CHECKSUMS:
   React-jsi: 54245e1d5f4b690dec614a73a3795964eeef13a8
   React-jsiexecutor: 8ca588cc921e70590820ce72b8789b02c67cce38
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
-  react-native-fbsdk: b94a83971c496a35803f38b921aec6d637ba07b5
-  react-native-netinfo: 1ee553f84e01aaffbed0e5bd53d8515f7d675055
+  react-native-netinfo: d2c312fa4b151214e1d5c8456ddb5f28ff24a576
   react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
   React-RCTAnimation: 9a883bbe1e9d2e158d4fb53765ed64c8dc2200c6
@@ -651,16 +618,17 @@ SPEC CHECKSUMS:
   React-RCTText: 1b6773e776e4b33f90468c20fe3b16ca3e224bb8
   React-RCTVibration: 4d2e726957f4087449739b595f107c0d4b6c2d2d
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
-  RNCAsyncStorage: 00bdf63f7f1e0f11d3323533dba4f222e58bf092
-  RNCMaskedView: 5dba3cb07493765fb66156c83c3dd281ca709a48
+  RNCAsyncStorage: 3eea36d9460c5159b592f9ecbe5a77f8aca98006
+  RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
   RNFBApp: 5b215aacc09105a1761de31b9a0eb2abcce06253
-  RNGestureHandler: 911d3b110a7a233a34c4f800e7188a84b75319c6
-  RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
-  RNScreens: 72136224c789172bb14bb59a51d511e07f773138
+  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
+  RNScreens: 0e91da98ab26d5d04c7b59a9b6bd694124caf88c
   RNSharedElement: a71a4fd469c027b964f0cbd444d5b66ae0776c29
   RNSpringScrollView: 8b0af44fda8b131d845b93bf5b1d0710152e4e61
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  RNVectorIcons: 368d6d8b8301224e5ffb6254191f4f8876c2be0d
+  toolbar-android: 404f4450b203597e7b417f714ff417bed562a1be
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

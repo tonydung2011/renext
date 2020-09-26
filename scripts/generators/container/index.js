@@ -45,12 +45,6 @@ module.exports = {
       },
       {
         type: 'add',
-        path: '../../src/redux/{{properCase name}}/module.js',
-        templateFile: './container/module.js.hbs',
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
         path: '../../src/redux/{{properCase name}}/selector.js',
         templateFile: './container/selector.js.hbs',
         abortOnFail: true,

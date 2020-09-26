@@ -47,7 +47,7 @@ function AnimatedDetail({ navigation }) {
     translateX,
     translateY,
     state,
-  ] = useValues([0, 0, 0, 0, 0, State.UNDETERMINED], []);
+  ] = useValues(0, 0, 0, 0, 0, State.UNDETERMINED);
   const gestureHandler = onGestureEvent({
     translationX,
     translationY,

@@ -42,8 +42,9 @@ const sharedNavigator = createSharedElementStackNavigator(
 
 const AppNavigator = createDrawerNavigator(
   {
-    shared: sharedNavigator,
+    // shared: sharedNavigator,
     liquid: Liquid,
+    Home: ListItem,
   },
   {
     initialRouteName: 'liquid',

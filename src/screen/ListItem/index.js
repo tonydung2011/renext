@@ -7,8 +7,8 @@
 import AnimatedItem from '@component/AnimatedItem/index';
 import HeaderNav from '@component/HeaderNav/index';
 import WaterFallList from '@component/WaterFallList/index';
+import { withMenu } from '@context/index';
 import { mockAction, sagaAction } from '@redux/home/action';
-import getModule from '@redux/home/module';
 import { selectCount as selectHomeCount } from '@redux/home/selector';
 import { AppSize, AppStyle } from '@theme/index';
 import React, { Component } from 'react';
@@ -19,7 +19,6 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import data from './data';
 import style from './style';
-import { withMenu } from '@context/index';
 
 const homeIdentifier = 'home';
 
@@ -81,8 +80,4 @@ const mapDispatchToProps = dispatch => ({
 });
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(
-  getModule({ identifier: homeIdentifier }),
-  withConnect,
-  withMenu,
-)(ListItem);
+export default compose(withConnect, withMenu)(ListItem);

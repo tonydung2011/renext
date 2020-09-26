@@ -1,7 +1,6 @@
-import UtilLib from './util';
+import HookLib from './hooks';
 import NavigationServiceLib from './navigationService';
 import TransitionLib from './transition';
-import HookLib from './hooks';
-import * as AliasLib from './alias';
+import UtilLib from './util';
 
-export { UtilLib, AliasLib, NavigationServiceLib, TransitionLib, HookLib };
+export { UtilLib, NavigationServiceLib, TransitionLib, HookLib };

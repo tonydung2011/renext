@@ -1,6 +1,6 @@
-import { string } from 'react-native-redash';
-import { AliasLib } from '@lib/index';
+import { clone, each } from 'lodash';
 import Animated from 'react-native-reanimated';
+import { string } from 'react-native-redash';
 const { concat } = Animated;
 
 const moveTo = (path = '', { x, y }) => {
@@ -20,8 +20,8 @@ const closePath = (path = '') => {
 };
 
 const composeSvgHelper = (path, ...transform) => {
-  let newPath = AliasLib.lodash.clone(path);
-  AliasLib.lodash.each(transform, func => {
+  let newPath = clone(path);
+  each(transform, func => {
     newPath = func[0](newPath, func[1]);
   });
   return newPath;

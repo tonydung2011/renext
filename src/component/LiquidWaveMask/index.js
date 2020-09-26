@@ -51,19 +51,14 @@ function LiquidWaveMask({ children }) {
     absoluteX,
     absoluteY,
     state,
-  ] = useValues([0, 0, 0, 0, 0, 0, initialWaveCenterY, State.UNDETERMINED]);
+  ] = useValues(0, 0, 0, 0, 0, 0, initialWaveCenterY, State.UNDETERMINED);
 
-  const [
-    waveCenterY,
-    waveVertRadius,
-    sideWidth,
-    previousSideWidth,
-  ] = useValues([
+  const [waveCenterY, waveVertRadius, sideWidth, previousSideWidth] = useValues(
     initialWaveCenterY,
     minHorizontalRadius * curveVeritcalHorizontalRate,
     0,
     0,
-  ]);
+  );
 
   const waveHorRadius = interpolate(velocityX, {
     inputRange: [-screenWidth, 0],
@@ -207,7 +202,8 @@ function LiquidWaveMask({ children }) {
               ),
             },
             style.maskHandler,
-          ]}></Animated.View>
+          ]}
+        />
       </PanGestureHandler>
     </MaskedView>
   );

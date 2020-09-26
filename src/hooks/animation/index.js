@@ -24,6 +24,4 @@ const useColorTransition = colorRange => {
   return [colorValue, animateToColor];
 };
 
-export default {
-  useColorTransition,
-};
+export { useColorTransition };
