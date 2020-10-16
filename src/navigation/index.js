@@ -42,12 +42,12 @@ const sharedNavigator = createSharedElementStackNavigator(
 
 const AppNavigator = createDrawerNavigator(
   {
-    // shared: sharedNavigator,
     liquid: Liquid,
+    shared: sharedNavigator,
     Home: ListItem,
   },
   {
-    initialRouteName: 'liquid',
+    initialRouteName: 'Home',
     headerMode: 'none',
     backBehavior: 'none',
     defaultNavigationOptions: {
