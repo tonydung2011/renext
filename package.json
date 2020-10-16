@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "commit": "cz",
     "generate": "plop --plopfile scripts/generators/index.js",
     "postinstall": "node scripts/react-scrollview-fix.js && npx jetify && pod-install",
     "reset-cache": "rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache",
@@ -51,6 +52,8 @@
     "@babel/runtime": "~7.8.4",
     "@react-native-community/eslint-config": "~1.1.0",
     "babel-jest": "~25.1.0",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "~6.7.2",
     "jest": "~25.1.0",
     "jetifier": "^1.6.5",
@@ -63,5 +66,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
