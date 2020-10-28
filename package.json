@@ -22,7 +22,7 @@
     "@redux-dynostore/redux-saga": "^3.0.1",
     "@redux-offline/redux-offline": "^2.5.2-native.3",
     "buffer": "^5.5.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "react": "16.13.1",
